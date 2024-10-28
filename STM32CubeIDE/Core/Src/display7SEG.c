@@ -1,3 +1,7 @@
+#include"main.h"
+#include "display7SEG.h"
+
+
 void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG0_GPIO_Port, SEG0_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(SEG1_GPIO_Port, SEG1_Pin, GPIO_PIN_SET);

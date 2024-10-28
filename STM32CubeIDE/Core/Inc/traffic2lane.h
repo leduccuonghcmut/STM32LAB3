@@ -1,7 +1,5 @@
 #include "main.h"
 
-
-
 #ifndef INC_TRAFFIC2LANE_H_
 #define INC_TRAFFIC2LANE_H_
 
