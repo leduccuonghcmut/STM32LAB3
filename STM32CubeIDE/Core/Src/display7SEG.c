@@ -1,6 +1,6 @@
 #include"main.h"
 #include "display7SEG.h"
-
+#include "global.h"
 
 void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG0_GPIO_Port, SEG0_Pin, GPIO_PIN_SET);
@@ -120,6 +120,12 @@ void update7SEG(int index){
 			  display7SEG(led_buffer[3]);
 			  break;
 		}
+}
+void updateClockBuffer(){
+	  led_buffer[0] = lane_ngang / 10;
+	  led_buffer[1] = lane_ngang % 10;
+	  led_buffer[2] = lane_doc / 10;
+	  led_buffer[3] = lane_doc % 10;
 }
 
 
