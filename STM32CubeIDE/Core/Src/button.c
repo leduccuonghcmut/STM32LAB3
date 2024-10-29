@@ -1,54 +1,46 @@
 #include "button.h"
-#include "main.h"
+#include "global.h"
 
-#define ARRAY_SIZE 3
+int button_flag[4] = {0};
 
-int button_flag[ARRAY_SIZE] = {0 ,0 ,0};
+int KeyReg0[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int KeyReg1[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int KeyReg2[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int KeyReg3[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 
-int KeyReg0[ARRAY_SIZE] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
-int KeyReg1[ARRAY_SIZE] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
-int KeyReg2[ARRAY_SIZE] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int timeForKeyPress = 100;
 
-int KeyReg3[ARRAY_SIZE] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
-int TimerForKeyPress[ARRAY_SIZE] = {200, 200, 200};
+int button_ports[4] = {0, BUTTON_1_GPIO_Port, BUTTON_2_GPIO_Port, BUTTON_3_GPIO_Port};
+int button_pins[4] = {0, BUTTON_1_Pin, BUTTON_2_Pin, BUTTON_3_Pin};
 
-void subKeyProcess(int i){
-	for(int j = 0; j < ARRAY_SIZE; j++){
-		button_flag[j] = 0;
+int counterForButtonPress1s[4] = {0};
+
+int isButtonPressed(int key){
+	if(button_flag[key] == 1){
+		button_flag[key] = 0;
+		return 1;
 	}
-	button_flag[i] = 1;
+	return 0;
 }
+void subKeyProcess(int key){
+	button_flag[key] = 1;
+}
+void getKeyInput(int key){
 
-void getKeyInput(){
-	KeyReg0[0] = KeyReg1[0];
-	KeyReg1[0] = KeyReg2[0];
-	KeyReg2[0] = HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
-
-	KeyReg0[1] = KeyReg1[1];
-	KeyReg1[1] = KeyReg2[1];
-	KeyReg2[1] = HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
-
-	KeyReg0[2] = KeyReg1[2];
-	KeyReg1[2] = KeyReg2[2];
-	KeyReg2[2] = HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
-
-
-	for(int i = 0; i < ARRAY_SIZE; i++){
-		if((KeyReg0[i] == KeyReg1[i]) && (KeyReg1[i] == KeyReg2[i])){
-			if(KeyReg3[i] != KeyReg2[i]){
-				KeyReg3[i] = KeyReg2[i];
-				if(KeyReg2[i] == PRESSED_STATE){
-					subKeyProcess(i);
-					TimerForKeyPress[i] = 200;
-				}
-			}else{
-				TimerForKeyPress[i]--;
-				if(TimerForKeyPress[i] == 0){
-					if(KeyReg2[i] == PRESSED_STATE){
-						subKeyProcess(i);
-					}
-					TimerForKeyPress[i] = 200;
-				}
+	KeyReg0[key] = KeyReg1[key];
+	KeyReg1[key] = KeyReg2[key];
+	KeyReg2[key] = HAL_GPIO_ReadPin(button_ports[key],button_pins[key]);
+	if((KeyReg0[key] == KeyReg1[key]) && (KeyReg1[key] == KeyReg2[key])){
+		if(KeyReg3[key] != KeyReg2[key]){
+			KeyReg3[key] = KeyReg2[key];
+			if(KeyReg2[key] == PRESSED_STATE){
+				subKeyProcess(key);
+				timeForKeyPress = 100;
+			}
+		}else{
+			timeForKeyPress--;
+			if(timeForKeyPress == 0){
+				KeyReg3[key] = NORMAL_STATE;
 			}
 		}
 	}

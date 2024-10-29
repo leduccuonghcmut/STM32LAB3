@@ -21,7 +21,7 @@ Core/Src/display7SEG.o: ../Core/Src/display7SEG.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Core/Inc/display7SEG.h
+ ../Core/Inc/display7SEG.h ../Core/Inc/global.h ../Core/Inc/main.h
 
 ../Core/Inc/main.h:
 
@@ -70,3 +70,7 @@ Core/Src/display7SEG.o: ../Core/Src/display7SEG.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
 ../Core/Inc/display7SEG.h:
+
+../Core/Inc/global.h:
+
+../Core/Inc/main.h:
