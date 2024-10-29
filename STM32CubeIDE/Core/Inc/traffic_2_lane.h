@@ -9,6 +9,8 @@ void yellow_1(void);
 
 void red_2(void);
 void green_2(void);
-void yellows_2(void);
+void yellow_2(void);
+void off_lane1(void);
+void off_lane2(void);
 
 #endif /* INC_TRAFFIC2LANE_H_ */

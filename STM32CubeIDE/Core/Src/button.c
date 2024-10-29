@@ -1,19 +1,18 @@
 #include "button.h"
-#include "global.h"
 
 int button_flag[4] = {0};
 
-int KeyReg0[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
-int KeyReg1[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
-int KeyReg2[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
-int KeyReg3[4]={0,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int KeyReg0[4]={NORMAL_STATE,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int KeyReg1[4]={NORMAL_STATE,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int KeyReg2[4]={NORMAL_STATE,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int KeyReg3[4]={NORMAL_STATE,NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 
 int timeForKeyPress = 100;
 
-int button_ports[4] = {0, BUTTON_1_GPIO_Port, BUTTON_2_GPIO_Port, BUTTON_3_GPIO_Port};
-int button_pins[4] = {0, BUTTON_1_Pin, BUTTON_2_Pin, BUTTON_3_Pin};
+GPIO_TypeDef* button_ports[4] = {0, BUTTON_1_GPIO_Port, BUTTON_2_GPIO_Port, BUTTON_3_GPIO_Port};
+uint16_t button_pins[4] = {0, BUTTON_1_Pin, BUTTON_2_Pin, BUTTON_3_Pin};
 
-int counterForButtonPress1s[4] = {0};
+
 
 int isButtonPressed(int key){
 	if(button_flag[key] == 1){
@@ -45,3 +44,4 @@ void getKeyInput(int key){
 		}
 	}
 }
+
