@@ -1,5 +1,5 @@
 #include "main.h"
-#include "fsm_manual.h"
+#include "global.h"
 
 #ifndef INC_FSM_MANUAL_H_
 #define INC_FSM_MANUAL_H_

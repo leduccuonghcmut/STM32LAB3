@@ -173,6 +173,10 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Core/Src/display7SEG.o
  .data          0x0000000000000000        0x0 ./Core/Src/display7SEG.o
  .bss           0x0000000000000000        0x0 ./Core/Src/display7SEG.o
+ .bss.counter_led_1
+                0x0000000000000000        0x4 ./Core/Src/display7SEG.o
+ .bss.counter_led_2
+                0x0000000000000000        0x4 ./Core/Src/display7SEG.o
  .text.display7SEG
                 0x0000000000000000      0x290 ./Core/Src/display7SEG.o
  .rodata.MAX_LED
@@ -183,16 +187,17 @@ Discarded input sections
                 0x0000000000000000       0x10 ./Core/Src/display7SEG.o
  .text.update7SEG
                 0x0000000000000000      0x128 ./Core/Src/display7SEG.o
- .bss.lane_ngang
-                0x0000000000000000        0x4 ./Core/Src/display7SEG.o
- .bss.lane_doc  0x0000000000000000        0x4 ./Core/Src/display7SEG.o
  .text.update_buffer
                 0x0000000000000000       0x80 ./Core/Src/display7SEG.o
- .debug_info    0x0000000000000000      0x306 ./Core/Src/display7SEG.o
- .debug_abbrev  0x0000000000000000      0x170 ./Core/Src/display7SEG.o
+ .text.counter_2_led
+                0x0000000000000000       0x28 ./Core/Src/display7SEG.o
+ .text.value_2_lane
+                0x0000000000000000       0x28 ./Core/Src/display7SEG.o
+ .debug_info    0x0000000000000000      0x34d ./Core/Src/display7SEG.o
+ .debug_abbrev  0x0000000000000000      0x18c ./Core/Src/display7SEG.o
  .debug_aranges
-                0x0000000000000000       0x30 ./Core/Src/display7SEG.o
- .debug_ranges  0x0000000000000000       0x20 ./Core/Src/display7SEG.o
+                0x0000000000000000       0x40 ./Core/Src/display7SEG.o
+ .debug_ranges  0x0000000000000000       0x30 ./Core/Src/display7SEG.o
  .debug_macro   0x0000000000000000      0x19c ./Core/Src/display7SEG.o
  .debug_macro   0x0000000000000000      0xa9c ./Core/Src/display7SEG.o
  .debug_macro   0x0000000000000000      0x20f ./Core/Src/display7SEG.o
@@ -229,12 +234,193 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x141 ./Core/Src/display7SEG.o
  .debug_macro   0x0000000000000000       0x69 ./Core/Src/display7SEG.o
  .debug_macro   0x0000000000000000      0x100 ./Core/Src/display7SEG.o
- .debug_line    0x0000000000000000      0x6dd ./Core/Src/display7SEG.o
- .debug_str     0x0000000000000000    0x78c7f ./Core/Src/display7SEG.o
+ .debug_line    0x0000000000000000      0x70f ./Core/Src/display7SEG.o
+ .debug_str     0x0000000000000000    0x78cba ./Core/Src/display7SEG.o
  .comment       0x0000000000000000       0x54 ./Core/Src/display7SEG.o
- .debug_frame   0x0000000000000000       0x7c ./Core/Src/display7SEG.o
+ .debug_frame   0x0000000000000000       0xc4 ./Core/Src/display7SEG.o
  .ARM.attributes
                 0x0000000000000000       0x2d ./Core/Src/display7SEG.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/fsm_auto.o
+ .text          0x0000000000000000        0x0 ./Core/Src/fsm_auto.o
+ .data          0x0000000000000000        0x0 ./Core/Src/fsm_auto.o
+ .bss           0x0000000000000000        0x0 ./Core/Src/fsm_auto.o
+ .data.red_duration
+                0x0000000000000000        0x4 ./Core/Src/fsm_auto.o
+ .data.green_duration
+                0x0000000000000000        0x4 ./Core/Src/fsm_auto.o
+ .data.yellow_duration
+                0x0000000000000000        0x4 ./Core/Src/fsm_auto.o
+ .text.fsm_auto_run
+                0x0000000000000000       0x8c ./Core/Src/fsm_auto.o
+ .debug_info    0x0000000000000000      0x220 ./Core/Src/fsm_auto.o
+ .debug_abbrev  0x0000000000000000       0xc5 ./Core/Src/fsm_auto.o
+ .debug_aranges
+                0x0000000000000000       0x20 ./Core/Src/fsm_auto.o
+ .debug_ranges  0x0000000000000000       0x10 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x1c7 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0xa9c ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x20f ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x2e ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x8e ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x51 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x103 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x6a ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x1df ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0xc3 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0xd23 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000     0xde75 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x6d ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000     0x3468 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x174 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x5c ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x5be ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x1b7 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x1cb ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x114 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x1b2 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x27 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x12f ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x1bc ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x34 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x3c ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x57 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x88 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x183 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x141 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x69 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000      0x100 ./Core/Src/fsm_auto.o
+ .debug_macro   0x0000000000000000       0x3a ./Core/Src/fsm_auto.o
+ .debug_line    0x0000000000000000      0x695 ./Core/Src/fsm_auto.o
+ .debug_str     0x0000000000000000    0x78ceb ./Core/Src/fsm_auto.o
+ .comment       0x0000000000000000       0x54 ./Core/Src/fsm_auto.o
+ .debug_frame   0x0000000000000000       0x2c ./Core/Src/fsm_auto.o
+ .ARM.attributes
+                0x0000000000000000       0x2d ./Core/Src/fsm_auto.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .group         0x0000000000000000        0xc ./Core/Src/global.o
+ .text          0x0000000000000000        0x0 ./Core/Src/global.o
+ .data          0x0000000000000000        0x0 ./Core/Src/global.o
+ .bss           0x0000000000000000        0x0 ./Core/Src/global.o
+ .bss.status    0x0000000000000000        0x4 ./Core/Src/global.o
+ .debug_info    0x0000000000000000      0x192 ./Core/Src/global.o
+ .debug_abbrev  0x0000000000000000       0xa9 ./Core/Src/global.o
+ .debug_aranges
+                0x0000000000000000       0x18 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x19b ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0xa9c ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x20f ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x2e ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x8e ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x51 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x103 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x6a ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x1df ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0xc3 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0xd23 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000     0xde75 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x6d ./Core/Src/global.o
+ .debug_macro   0x0000000000000000     0x3468 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x174 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x5c ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x5be ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x1b7 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x1cb ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x114 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x1b2 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x27 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x12f ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x1bc ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x34 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x3c ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x57 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x88 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x183 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x141 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x69 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000      0x100 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x3a ./Core/Src/global.o
+ .debug_line    0x0000000000000000      0x61c ./Core/Src/global.o
+ .debug_str     0x0000000000000000    0x78c38 ./Core/Src/global.o
+ .comment       0x0000000000000000       0x54 ./Core/Src/global.o
+ .ARM.attributes
+                0x0000000000000000       0x33 ./Core/Src/global.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
  .group         0x0000000000000000        0xc ./Core/Src/main.o
@@ -2270,6 +2456,8 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
 LOAD ./Core/Src/button.o
 LOAD ./Core/Src/display7SEG.o
+LOAD ./Core/Src/fsm_auto.o
+LOAD ./Core/Src/global.o
 LOAD ./Core/Src/main.o
 LOAD ./Core/Src/software_timer.o
 LOAD ./Core/Src/stm32f1xx_hal_msp.o

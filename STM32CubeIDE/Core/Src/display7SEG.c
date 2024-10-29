@@ -1,5 +1,8 @@
 #include "display7SEG.h"
 
+int counter_led_1 = 0;
+int counter_led_2 = 0;
+
 void display7SEG(int num){
 		HAL_GPIO_WritePin(SEG0_GPIO_Port, SEG0_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(SEG1_GPIO_Port, SEG1_Pin, GPIO_PIN_SET);
@@ -120,13 +123,21 @@ void update7SEG(int index){
 		}
 }
 
-int lane_ngang = 0;
-int lane_doc = 0;
+
 void update_buffer(){
-	  led_buffer[0] = lane_ngang / 10;
-	  led_buffer[1] = lane_ngang % 10;
-	  led_buffer[2] = lane_doc / 10;
-	  led_buffer[3] = lane_doc % 10;
+	  led_buffer[0] = counter_led_1 / 10;
+	  led_buffer[1] = counter_led_1 % 10;
+	  led_buffer[2] = counter_led_2 / 10;
+	  led_buffer[3] = counter_led_2 % 10;
 }
 
+void counter_2_led() {
+	counter_led_1--;
+	counter_led_2--;
+}
+
+void value_2_lane(int value_lane1, int value_lane2) {
+	counter_led_1 = value_lane1;
+	counter_led_2 = value_lane2;
+}
 
