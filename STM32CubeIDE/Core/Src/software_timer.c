@@ -1,5 +1,5 @@
 #include "software_timer.h"
-#include "main.h"
+
 
 
 int timer_counter[10] = {0};

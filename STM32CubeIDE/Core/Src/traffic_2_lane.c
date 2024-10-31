@@ -45,3 +45,20 @@ void off_lane2(void){
 	HAL_GPIO_WritePin(yellow2_GPIO_Port, yellow2_Pin, GPIO_PIN_RESET );
     HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, GPIO_PIN_RESET );
 }
+//void fsm_auto_run(){
+//	case_1();
+//	if(timer_flag[1] == 1){
+//		setTimer(1, 100);
+//		if(count == 0)
+//			status = RED_GREEN;
+//		else if(count == 1)
+//			status = RED_YELLOW;
+//		else if(count == 2)
+//			status = GREEN_RED;
+//		else if(count == 3){
+//			status = YELLOW_RED;
+//		}
+//		count++;
+//		if(count == 3)count = 0;
+//	}
+//}
