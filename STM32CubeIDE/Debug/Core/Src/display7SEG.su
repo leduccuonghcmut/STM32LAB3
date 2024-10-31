@@ -1,6 +1,4 @@
 display7SEG.c:6:6:display7SEG	16	static
 display7SEG.c:89:6:display7SEG_2	16	static
-display7SEG.c:177:6:update7SEG	16	static
-display7SEG.c:211:6:update_buffer	4	static
-display7SEG.c:218:6:counter_2_led	4	static
-display7SEG.c:223:6:value_2_lane	16	static
+display7SEG.c:178:6:update7SEG	16	static
+display7SEG.c:193:6:update7SEG_lane2	16	static

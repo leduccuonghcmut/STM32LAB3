@@ -28,7 +28,7 @@ void subKeyProcess(int key){
 }
 
 int isButtonLongPressed(int key){
-	if(button_longpress_flag[key] = 1){
+	if(button_longpress_flag[key] == 1){
 		button_longpress_flag[key] = 0;
 		return 1;
 	}
