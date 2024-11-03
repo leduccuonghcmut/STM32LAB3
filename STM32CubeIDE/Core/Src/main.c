@@ -21,6 +21,13 @@
 #include "main.h"
 #include "global.h"
 #include "fsm_auto.h"
+#include "software_timer.h"
+#include "fsm_manual.h"
+#include "fsm_setting.h"
+#include "fsm_traffic.h"
+#include "traffic_2_lane.h"
+#include "button.h"
+#include "display7SEG.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -95,14 +102,20 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  status = INIT;
-  setTimer(0, 1);
-  setTimer(1, 1);
-  setTimer(2, 1);
+
+  setTimer(4, 10);
+  setTimer(6, 10);
+  setTimer(7, 500);
+  setTimer(8, 500);
   while (1)
   {
     /* USER CODE END WHILE */
-	  fsm_auto_run();
+	  fsm_manual_run();
+	  FSMDisplayLED1();
+	  FSMDisplayLED2();
+	  fsm_traffic_lane1_run();
+	  fsm_traffic_lane2_run();
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -248,7 +261,9 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
 	timerRun();
-	//getKeyInput();
+	getKeyInput();
+	//getkey();
+
 }
 /* USER CODE END 4 */
 
