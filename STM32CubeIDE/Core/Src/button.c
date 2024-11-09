@@ -1,5 +1,4 @@
 #include "button.h"
-
 //int button_press_flag[3] = {0,0,0};
 //int button_longpress_flag[3] = {0,0,0};
 //
@@ -70,12 +69,12 @@
 
 
 
-#include "button.h"
+
 int keyReg0[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int keyReg1[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int keyReg2[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+int keyReg3[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE}; // trạng thái ổn định trước đó
 
-int keyReg3[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};// trạng thái ổn định trước đó
 int timerForKeyPress = 300;// nhấn đè thì 3s mới xử lý
 
 int button_BUT1_flag = 0;

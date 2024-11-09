@@ -65,6 +65,10 @@ void FSMDisplayLED2(){
 			break;
 	}
 }
+void FSM_Display_2LED(){
+	FSMDisplayLED1();
+	FSMDisplayLED2();
+}
 
 
 

@@ -21,5 +21,6 @@ extern int StatusLED2;
 
 void FSMDisplayLED1();
 void FSMDisplayLED2();
+void FSM_Display_2LED();
 
 #endif /* INC_FSM_SETTING_H_ */

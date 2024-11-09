@@ -1,7 +1,7 @@
-button.c:90:5:isButton_BUT1_Pressed	4	static
-button.c:99:5:isButton_BUT2_Pressed	4	static
-button.c:108:5:isButton_BUT3_Pressed	4	static
-button.c:117:5:isButton_BUT1_LongPressed	4	static
-button.c:124:5:isButton_BUT2_LongPressed	4	static
-button.c:131:5:isButton_BUT3_LongPressed	4	static
-button.c:139:6:getKeyInput	16	static
+button.c:89:5:isButton_BUT1_Pressed	4	static
+button.c:98:5:isButton_BUT2_Pressed	4	static
+button.c:107:5:isButton_BUT3_Pressed	4	static
+button.c:116:5:isButton_BUT1_LongPressed	4	static
+button.c:123:5:isButton_BUT2_LongPressed	4	static
+button.c:130:5:isButton_BUT3_LongPressed	4	static
+button.c:138:6:getKeyInput	16	static

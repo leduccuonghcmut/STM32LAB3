@@ -111,8 +111,9 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  fsm_manual_run();
-	  FSMDisplayLED1();
-	  FSMDisplayLED2();
+//	  FSMDisplayLED1();
+//	  FSMDisplayLED2();
+	  FSM_Display_2LED();
 	  fsm_traffic_lane1_run();
 	  fsm_traffic_lane2_run();
 
