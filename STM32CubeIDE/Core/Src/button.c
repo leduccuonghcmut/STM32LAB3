@@ -67,15 +67,12 @@
 //	getKeyInput(3);
 //}
 
-
-
-
 int keyReg0[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int keyReg1[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int keyReg2[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int keyReg3[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE}; // trạng thái ổn định trước đó
 
-int timerForKeyPress = 300;// nhấn đè thì 3s mới xử lý
+int timerForKeyPress = 100;// nhấn đè thì 2s mới xử lý
 
 int button_BUT1_flag = 0;
 int button_BUT2_flag = 0;
@@ -86,139 +83,110 @@ int button_BUT2_LongPressed_flag = 0;
 int button_BUT3_LongPressed_flag = 0;
 
 
-int isButton_BUT1_Pressed()
-{
-	if(button_BUT1_flag == 1)
-	{
+int isButton_BUT1_Pressed(){
+	if(button_BUT1_flag == 1){
 		button_BUT1_flag = 0;
 		return 1;
 	}
-	else return 0;
+	return 0;
 }
-int isButton_BUT2_Pressed()
-{
-	if(button_BUT2_flag == 1)
-	{
+int isButton_BUT2_Pressed(){
+	if(button_BUT2_flag == 1){
 		button_BUT2_flag = 0;
 		return 1;
 	}
-	else return 0;
+	return 0;
 }
-int isButton_BUT3_Pressed()
-{
-	if(button_BUT3_flag == 1)
-	{
+int isButton_BUT3_Pressed(){
+	if(button_BUT3_flag == 1){
 		button_BUT3_flag = 0;
 		return 1;
 	}
-	else return 0;
+	return 0;
 }
 int isButton_BUT1_LongPressed(){
 	if(button_BUT1_LongPressed_flag == 1){
 		button_BUT1_LongPressed_flag = 0;
 		return 1;
 	}
-	else return 0;
+	return 0;
 }
 int isButton_BUT2_LongPressed(){
 	if(button_BUT2_LongPressed_flag == 1){
 		button_BUT2_LongPressed_flag = 0;
 		return 1;
 	}
-	else return 0;
+	return 0;
 }
 int isButton_BUT3_LongPressed(){
 	if(button_BUT3_LongPressed_flag == 1){
 		button_BUT3_LongPressed_flag = 0;
 		return 1;
 	}
-	else return 0;
+	return 0;
 }
 
-void getKeyInput()
-{
-	for(int i = 0; i < 3; i++){
-		keyReg0[i] = keyReg1[i];
-		keyReg1[i] = keyReg2[i];
-		if(i == 0){
-			keyReg2[i] = HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
-			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
-			{
-				if(keyReg3[i] != keyReg2[i])
-				{
-					keyReg3[i] = keyReg2[i];
-					if(keyReg2[i] == PRESSED_STATE)
-					{
+void getKeyInput(){
+		keyReg0[0] = keyReg1[0];
+		keyReg1[0] = keyReg2[0];
+		keyReg2[0] = HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
+		if((keyReg0[0] == keyReg1[0]) && (keyReg1[0] == keyReg2[0])){
+			if(keyReg3[0] != keyReg2[0]){
+				keyReg3[0] = keyReg2[0];
+				if(keyReg2[0] == PRESSED_STATE){
+					button_BUT1_flag = 1;
+					timerForKeyPress = 100;
+				}
+			} else {
+					timerForKeyPress--;
+					if(timerForKeyPress == 0){
+						keyReg3[0] = NORMAL_STATE;
 						button_BUT1_flag = 1;
-						timerForKeyPress = 300;
+						button_BUT1_LongPressed_flag = 1;
+						timerForKeyPress = 100;
 					}
 				}
-				else
-				{
-					if(keyReg2[i] == PRESSED_STATE){
-						timerForKeyPress--;
-						if(timerForKeyPress == 0)
-						{
-							button_BUT1_LongPressed_flag = 1;
-							timerForKeyPress = 300;
-						}
-					}
-				}
-			}
 		}
-		if(i == 1){
-			keyReg2[i] = HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
-			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
-			{
-				if(keyReg3[i] != keyReg2[i])
-				{
-					keyReg3[i] = keyReg2[i];
-					if(keyReg2[i] == PRESSED_STATE)
-					{
+		keyReg0[1] = keyReg1[1];
+		keyReg1[1] = keyReg2[1];
+		keyReg2[1] = HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
+		if((keyReg0[1] == keyReg1[1]) && (keyReg1[1] == keyReg2[1])){
+			if(keyReg3[1] != keyReg2[1]){
+				keyReg3[1] = keyReg2[1];
+				if(keyReg2[1] == PRESSED_STATE){
+					button_BUT2_flag = 1;
+					timerForKeyPress = 100;
+				}
+			} else {
+					timerForKeyPress--;
+					if(timerForKeyPress == 0){
+						keyReg3[1] = NORMAL_STATE;
 						button_BUT2_flag = 1;
-						timerForKeyPress = 300;
+						button_BUT2_LongPressed_flag = 1;
+						timerForKeyPress = 100;
 					}
 				}
-				else
-				{
-					if(keyReg2[i] == PRESSED_STATE){
-						timerForKeyPress--;
-						if(timerForKeyPress == 0)
-						{
-							button_BUT2_LongPressed_flag = 1;
-							timerForKeyPress = 300;
-						}
-					}
-				}
-			}
 		}
-		if(i == 2){
-			keyReg2[i] = HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
-			if((keyReg0[i] == keyReg1[i]) && (keyReg1[i] == keyReg2[i]))
-			{
-				if(keyReg3[i] != keyReg2[i])
-				{
-					keyReg3[i] = keyReg2[i];
-					if(keyReg2[i] == PRESSED_STATE)
-					{
+		keyReg0[2] = keyReg1[2];
+		keyReg1[2] = keyReg2[2];
+		keyReg2[2] = HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
+		if((keyReg0[2] == keyReg1[2]) && (keyReg1[2] == keyReg2[2])){
+			if(keyReg3[2] != keyReg2[2]){
+				keyReg3[2] = keyReg2[2];
+				if(keyReg2[2] == PRESSED_STATE){
+					button_BUT3_flag = 1;
+					timerForKeyPress = 100;
+				}
+			} else {
+					timerForKeyPress--;
+					if(timerForKeyPress == 0){
+						keyReg3[2] = NORMAL_STATE;
 						button_BUT3_flag = 1;
-						timerForKeyPress = 300;
+						button_BUT3_LongPressed_flag = 1;
+						timerForKeyPress = 100;
 					}
 				}
-				else
-				{
-					if(keyReg2[i] == PRESSED_STATE){
-						timerForKeyPress--;
-						if(timerForKeyPress == 0)
-						{
-							button_BUT3_LongPressed_flag = 1;
-							timerForKeyPress = 300;
-						}
-					}
-				}
-			}
 		}
-	}
-}
 
+}
 

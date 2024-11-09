@@ -101,10 +101,6 @@
 
 
 
-
-
-
-
 void fsm_manual_run(){
 	switch(STATUS_MODE){
 		case INIT:
