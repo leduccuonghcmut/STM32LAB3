@@ -107,12 +107,16 @@ int main(void)
   setTimer(6, 10);
   setTimer(7, 500);
   setTimer(8, 500);
+  setTimer(10, 10);
   while (1)
   {
     /* USER CODE END WHILE */
+
+	  if(timer_flag[10]==1){
+		  setTimer(10, 1000);
+		  HAL_GPIO_TogglePin(LED_BLINKY_GPIO_Port, LED_BLINKY_Pin);
+	  }
 	  fsm_manual_run();
-//	  FSMDisplayLED1();
-//	  FSMDisplayLED2();
 	  FSM_Display_2LED();
 	  fsm_traffic_lane1_run();
 	  fsm_traffic_lane2_run();
@@ -262,8 +266,11 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
 	timerRun();
-	getKeyInput();
+	//getKeyInput();
 	//getkey();
+	getKeyInput1();
+	getKeyInput2();
+	getKeyInput3();
 
 }
 /* USER CODE END 4 */

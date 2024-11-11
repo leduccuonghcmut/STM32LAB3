@@ -30,16 +30,28 @@
 #define NORMAL_STATE GPIO_PIN_SET
 #define PRESSED_STATE GPIO_PIN_RESET
 
-int isButton_BUT1_Pressed();
-int isButton_BUT2_Pressed();
-int isButton_BUT3_Pressed();
+int isButton1_Pressed();
+int isButton2_Pressed();
+int isButton3_Pressed();
 
+extern int timerForKeyPress;
 
-int isButton_BUT1_LongPressed();
-int isButton_BUT2_LongPressed();
-int isButton_BUT3_LongPressed();
+int isButton1_Pressed_Long();
+int isButton2_Pressed_Long();
+int isButton3_Pressed_Long();
 
-void getKeyInput();
-void getkey();
+extern int button1_flag;
+extern int button2_flag;
+extern int button3_flag;
 
+extern int button1_long_flag;
+extern int button2_long_flag;
+extern int button3_long_flag;
+
+//void getKeyInput();
+//void getkey();
+
+void getKeyInput1();
+void getKeyInput2();
+void getKeyInput3();
 #endif /* INC_BUTTON_H_ */

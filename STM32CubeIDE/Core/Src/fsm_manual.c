@@ -95,12 +95,6 @@
 
 
 
-
-
-
-
-
-
 void fsm_manual_run(){
 	switch(STATUS_MODE){
 		case INIT:
@@ -113,7 +107,7 @@ void fsm_manual_run(){
 			StatusLED1 = CountDownLED1;
 			StatusLED2 = CountDownLED2;
 
-			if(isButton_BUT1_Pressed() == 1){
+			if(isButton1_Pressed() == 1){
 				STATUS_MODE = MODE_2;
 			}
 			break;
@@ -123,19 +117,23 @@ void fsm_manual_run(){
 			StatusLED1 = DisplayLED1Mode2;
 			StatusLED2 = TimerValue;
 
-			if(isButton_BUT2_Pressed() == 1){
+			if(isButton2_Pressed() == 1){
 				red1TimeMAX++;
 				red2TimeMAX++;
+				green1TimeMAX++;
+				green2TimeMAX++;
 			}
 			//update buffer
 			led_buffer_lane2[0] = red2TimeMAX/10;
 			led_buffer_lane2[1] = red2TimeMAX%10;
 
-			if(isButton_BUT3_Pressed() == 1){
+			if(isButton3_Pressed() == 1){
 				red1_time = red1TimeMAX;
 				red2_time = red2TimeMAX;
+				green1_time = green1TimeMAX;
+				green2_time = green2TimeMAX;
 			}
-			if(isButton_BUT1_Pressed() == 1){
+			if(isButton1_Pressed() == 1){
 				STATUS_MODE = MODE_3;
 			}
 			break;
@@ -145,18 +143,23 @@ void fsm_manual_run(){
 			StatusLED1 = DisplayLED1Mode3;
 			StatusLED2 = TimerValue;
 
-			if(isButton_BUT2_Pressed() == 1){
+			if(isButton2_Pressed() == 1){
 				yellow1TimeMAX++;
 				yellow2TimeMAX++;
+				red1TimeMAX++;
+				red2TimeMAX++;
+
 			}
 			led_buffer_lane2[0] = yellow2TimeMAX/10;
 			led_buffer_lane2[1] = yellow2TimeMAX%10;
 
-			if(isButton_BUT3_Pressed() == 1){
+			if(isButton3_Pressed() == 1){
 				yellow1_time = yellow1TimeMAX;
 				yellow2_time = yellow2TimeMAX;
+				red1_time = red1TimeMAX;
+				red2_time = red2TimeMAX;
 			}
-			if(isButton_BUT1_Pressed() == 1){
+			if(isButton1_Pressed() == 1){
 				STATUS_MODE = MODE_4;
 			}
 			break;
@@ -166,19 +169,23 @@ void fsm_manual_run(){
 			StatusLED1 = DisplayLED1Mode4;
 			StatusLED2 = TimerValue;
 
-			if(isButton_BUT2_Pressed() == 1){
+			if(isButton2_Pressed() == 1){
 				green1TimeMAX++;
 				green2TimeMAX++;
+				red1TimeMAX++;
+				red2TimeMAX++;
 			}
 
 			led_buffer_lane2[0] = green2TimeMAX/10;
 			led_buffer_lane2[1] = green2TimeMAX%10;
 
-			if(isButton_BUT3_Pressed() == 1){
+			if(isButton3_Pressed() == 1){
 				green1_time = green1TimeMAX;
 				green2_time = green2TimeMAX;
+				red1_time = red1TimeMAX;
+				red2_time = red2TimeMAX;
 			}
-			if(isButton_BUT1_Pressed() == 1 ){
+			if(isButton1_Pressed() == 1 ){
 				status_lane1 = INIT_1;
 				status_lane2 = INIT_2;
 				STATUS_MODE = INIT;
