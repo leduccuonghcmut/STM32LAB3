@@ -5,7 +5,7 @@ int keyReg1[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int keyReg2[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int keyReg3[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE}; // trạng thái ổn định trước đó
 
-int timerForKeyPress = 100;// nhấn đè thì 2s mới xử lý
+int timerForKeyPress = 100;// nhấn đè thì 1s mới xử lý
 
 int button1_flag = 0;
 int button2_flag = 0;
