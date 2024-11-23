@@ -35,6 +35,12 @@ void fsm_manual_run(){
 				red2TimeMAX++;
 				green1TimeMAX++;
 				green2TimeMAX++;
+//				if(red1TimeMAX > 10 && green1TimeMAX > 10){
+//					red1TimeMAX = 5;
+//					red2TimeMAX = 5;
+//					green1TimeMAX = 3;
+//					green2TimeMAX = 3;
+//				}
 			}
 			//update buffer
 			led_buffer_lane2[0] = red2TimeMAX/10;
@@ -45,6 +51,12 @@ void fsm_manual_run(){
 				red2_time = red2TimeMAX;
 				green1_time = green1TimeMAX;
 				green2_time = green2TimeMAX;
+				if(red1_time > 99 && red2_time > 99){
+					red1_time = 5;
+					red2_time = 5;
+					green1_time = 3;
+					green2_time = 3;
+				}
 			}
 			if(isButton1_Pressed() == 1){
 				STATUS_MODE = MODE_3;
@@ -61,7 +73,12 @@ void fsm_manual_run(){
 				yellow2TimeMAX++;
 				red1TimeMAX++;
 				red2TimeMAX++;
-
+				if(yellow1TimeMAX > 99 && red1TimeMAX > 99){
+					yellow1TimeMAX = 2;
+					yellow2TimeMAX = 2;
+					red1TimeMAX = 5;
+					red2TimeMAX = 5;
+				}
 			}
 			led_buffer_lane2[0] = yellow2TimeMAX/10;
 			led_buffer_lane2[1] = yellow2TimeMAX%10;
@@ -71,6 +88,12 @@ void fsm_manual_run(){
 				yellow2_time = yellow2TimeMAX;
 				red1_time = red1TimeMAX;
 				red2_time = red2TimeMAX;
+				if(yellow1_time > 99 && yellow2_time > 99){
+					yellow1_time = 2;
+					yellow1_time = 2;
+					red1_time = 5;
+					red2_time = 5;
+				}
 			}
 			if(isButton1_Pressed() == 1){
 				STATUS_MODE = MODE_4;
@@ -97,6 +120,12 @@ void fsm_manual_run(){
 				green2_time = green2TimeMAX;
 				red1_time = red1TimeMAX;
 				red2_time = red2TimeMAX;
+				if(green1_time > 99 && green2_time > 99){
+					green1_time = 3;
+					green2_time = 3;
+					red1_time = 5;
+					red2_time = 5;
+				}
 			}
 			if(isButton1_Pressed() == 1 ){
 				status_lane1 = INIT_1;

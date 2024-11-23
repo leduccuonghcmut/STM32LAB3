@@ -4,9 +4,6 @@
 //#include "fsm_auto.h"
 
 
-
-
-
 #ifndef INC_FSM_TRAFFIC_H_
 #define INC_FSM_TRAFFIC_H_
 

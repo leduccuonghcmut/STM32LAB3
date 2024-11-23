@@ -9,7 +9,7 @@ void FSMDisplayLED1(){
 			{
 				update7SEG(indexLEDmot++);
 				if(indexLEDmot == 2) indexLEDmot = 0;
-				setTimer(4, 150);
+				setTimer(4, 500);
 			}
 			break;
 		case DisplayLED1Mode2:
@@ -19,7 +19,7 @@ void FSMDisplayLED1(){
 			{
 				update7SEG(indexLEDmot++);
 				if(indexLEDmot == 2) indexLEDmot = 0;
-				setTimer(4, 150);
+				setTimer(4, 500);
 			}
 			break;
 		case DisplayLED1Mode3:
@@ -28,7 +28,7 @@ void FSMDisplayLED1(){
 			if(timer_flag[4]==1){
 				update7SEG(indexLEDmot++);
 				if(indexLEDmot == 2) indexLEDmot = 0;
-				setTimer(4, 150);
+				setTimer(4, 500);
 			}
 			break;
 		case DisplayLED1Mode4:
@@ -37,7 +37,7 @@ void FSMDisplayLED1(){
 			if(timer_flag[4]==1){
 				update7SEG(indexLEDmot++);
 				if(indexLEDmot == 2) indexLEDmot = 0;
-				setTimer(4, 150);
+				setTimer(4, 500);
 			}
 			break;
 		default:
@@ -51,14 +51,14 @@ void FSMDisplayLED2(){
 			if(timer_flag[6] == 1){
 				update7SEG_lane2(indexLEDhai++);
 				if(indexLEDhai == 2) indexLEDhai = 0;
-				setTimer(6, 150);
+				setTimer(6, 500);
 			}
 			break;
 		case TimerValue:
 			if(timer_flag[6] == 1){
 				update7SEG_lane2(indexLEDhai++);
 				if(indexLEDhai == 2) indexLEDhai = 0;
-				setTimer(6, 150);
+				setTimer(6, 500);
 			}
 			break;
 		default:

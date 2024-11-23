@@ -147,6 +147,37 @@ void getKeyInput3(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //#include "button.h"
 //
 //int keyReg0[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};

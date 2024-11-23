@@ -107,14 +107,16 @@ int main(void)
   setTimer(6, 10);
   setTimer(7, 500);
   setTimer(8, 500);
-  setTimer(10, 10);
+  setTimer(9, 500);
   while (1)
   {
     /* USER CODE END WHILE */
 
-	  if(timer_flag[10]==1){
-		  setTimer(10, 1000);
+	  if(timer_flag[9]==1){
+		  timer_flag[9] = 0;
+		  setTimer(9, 500);
 		  HAL_GPIO_TogglePin(LED_BLINKY_GPIO_Port, LED_BLINKY_Pin);
+
 	  }
 	  fsm_manual_run();
 	  FSM_Display_2LED();
